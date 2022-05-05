@@ -16,30 +16,27 @@ const ProductScreen = ({ match }) => {
   const history = useHistory();
   return (
     <>
-      <Button
-        onClick={(e) => {
-          history.push('/');
-        }}
-      >
-        p
-      </Button>
       <Link className="btn btn-dark my-3" to="/">
         Go Back
       </Link>
       <Row>
-        <Col md={6}>
-          <Image src={product.image} alt={product.name}></Image>
+        <Col xl={6}>
+          <Image
+            src={product?.image}
+            alt={product?.name}
+            style={{ width: '100%' }}
+          ></Image>
         </Col>
-        <Col md={3}>
+        <Col xl={3}>
           <ListGroup variant="flush">
             <ListGroup.Item>
-              <h3>{product.name}</h3>
+              <h3>{product?.name}</h3>
             </ListGroup.Item>
-            <ListGroup.Item>{product.price}</ListGroup.Item>
+            <ListGroup.Item>{product?.price}</ListGroup.Item>
             <ListGroup.Item>{product.description}</ListGroup.Item>
           </ListGroup>
         </Col>
-        <Col md={3}>
+        <Col xl={3}>
           <Card>
             <ListGroup variant="flush">
               <ListGroup.Item>

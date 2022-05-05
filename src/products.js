@@ -2,7 +2,8 @@ const products = [
   {
     _id: '1',
     name: 'Airpods Wireless Bluetooth Headphones',
-    image: '/images/airpods.jpg',
+    image:
+      'https://img.ltwebstatic.com/images3_pi/2021/09/18/16319295068e66cf04be8b24071b805f6e09642e77_thumbnail_900x.webp',
     description:
       'Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working',
     brand: 'Apple',

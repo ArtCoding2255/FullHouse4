@@ -73,6 +73,8 @@ const Header = () => {
             </li>
           </ul>
           <form className="d-flex">
+            <input placeholder="search" />
+            search
             <div>
               <ShoppingBagIcon /> CART
             </div>
