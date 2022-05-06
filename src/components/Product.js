@@ -13,7 +13,9 @@ export const Product = ({ product }) => {
       <Card.Body>
         <Link to={`/product/${product._id}`}>
           <Card.Title as="div">
-            <strong>{product.name}</strong>
+            <strong>
+              <p>{product.name}</p>
+            </strong>
           </Card.Title>
         </Link>
         <Card.Text as="div">
@@ -21,7 +23,7 @@ export const Product = ({ product }) => {
             {product.rating} from {product.numReviews} reviews
           </div>
         </Card.Text>
-        <Card.Text as="h3">${product.price}</Card.Text>
+        <Card.Text as="p">${product.price}</Card.Text>
       </Card.Body>
     </Card>
   );
