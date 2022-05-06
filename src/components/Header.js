@@ -2,11 +2,12 @@ import React from 'react';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import PersonIcon from '@mui/icons-material/Person';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           FullFouse
         </a>
         <button
@@ -75,9 +76,9 @@ const Header = () => {
           <form className="d-flex">
             <input placeholder="search" />
             search
-            <div>
+            <a href="/cart">
               <ShoppingBagIcon /> CART
-            </div>
+            </a>
             <div>
               <PersonIcon />
               LOGIN
