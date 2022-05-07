@@ -11,7 +11,7 @@ import {
   Card,
   Button,
 } from 'react-bootstrap';
-import { addToCart } from '../actions/cartActions.js';
+import { addToCart, removeFromCart } from '../actions/cartActions.js';
 import { FaTrash } from 'react-icons/fa';
 
 const CartScreen = ({ match, location, history }) => {
@@ -33,7 +33,7 @@ const CartScreen = ({ match, location, history }) => {
   }, [dispatch, productId, qty]);
 
   const removeFromCartHandLer = (id) => {
-    console.log('remove');
+    dispatch(removeFromCart(id));
   };
   const checkoutHandler = () => {
     history.push('/login?redirect=shipping');
