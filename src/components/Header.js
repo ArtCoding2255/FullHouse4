@@ -1,15 +1,29 @@
 import React from 'react';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import PersonIcon from '@mui/icons-material/Person';
+import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom';
+import { NavDropdown } from 'react-bootstrap';
+import { logout } from '../actions/userActions';
+
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          FullFouse
-        </a>
+        <LinkContainer to="/">
+          <h5>FullFouse</h5>
+        </LinkContainer>
+
         <button
           className="navbar-toggler"
           type="button"
@@ -76,14 +90,25 @@ const Header = () => {
           <form className="d-flex">
             <input placeholder="search" />
             search
-            <a href="/cart">
-              <ShoppingBagIcon /> CART
-            </a>
-            <div>
+          </form>
+          <Link to="/cart">
+            <ShoppingBagIcon /> CART
+          </Link>
+          {userInfo ? (
+            <NavDropdown title={userInfo.user.name} id="username">
+              <LinkContainer to="/profile">
+                <NavDropdown.Item>Profile</NavDropdown.Item>
+              </LinkContainer>
+              <NavDropdown.Item onClick={logoutHandler}>
+                Logout
+              </NavDropdown.Item>
+            </NavDropdown>
+          ) : (
+            <Link to="/login">
               <PersonIcon />
               LOGIN
-            </div>
-          </form>
+            </Link>
+          )}
         </div>
       </div>
     </nav>

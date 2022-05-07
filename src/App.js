@@ -6,23 +6,23 @@ import Header from './components/Header';
 import HomeScreen from './screen/HomeScreen';
 import ProductScreen from './screen/ProductScreen';
 import CartScreen from './screen/CartScreen.js';
+import LoginScreen from './screen/LoginScreen';
 
 function App() {
   return (
     <>
-      <Header />
-      <main className="py-3">
-        <Container>
-          <Router>
-            <Switch>
-              <Route path="/" component={HomeScreen} exact />
-              <Route path="/product/:id" component={ProductScreen} />
-              <Route path="/cart/:id?" component={CartScreen} />
-            </Switch>
-          </Router>
-        </Container>
-      </main>
-      <Footer />
+      <Router>
+        <Header />{' '}
+        <main className="py-3">
+          <Container>
+            <Route path="/login" component={LoginScreen} />
+            <Route path="/product/:id" component={ProductScreen} />
+            <Route path="/cart/:id?" component={CartScreen} />
+            <Route path="/" component={HomeScreen} exact />
+          </Container>
+        </main>
+        <Footer />
+      </Router>
     </>
   );
 }
