@@ -6,18 +6,18 @@ import { Link } from 'react-router-dom';
 export const Product = ({ product }) => {
   return (
     <>
-      <Card className={`my-3 p-3 rounded ${style.img}`}>
+      <Card className={`rounded ${style.img}`}>
         <Link to={`/product/${product._id}`}>
           <Card.Img src={product.image} className={`${style.img}`}></Card.Img>
         </Link>
       </Card>
 
-      <Card.Body style={{ border: 'none', color: '#5D5D5D' }}>
+      <Card.Body style={{ border: 'none', color: '#5D5D5D', padding: '0' }}>
         <Link to={`/product/${product._id}`} style={{ textDecoration: 'none' }}>
           <Card.Title
             as="div"
             style={{
-              marginTop: '1%',
+              margin: '1% 0 0 0',
             }}
           >
             <strong>
@@ -28,6 +28,7 @@ export const Product = ({ product }) => {
                   overflow: 'hidden',
                   fontWeight: 'bolder',
                   marginTop: '1%',
+                  marginBottom: '0',
                 }}
               >
                 {product.name}

@@ -30,9 +30,9 @@ const HomeScreen = ({ match }) => {
         <Message variant="danger" />
       ) : (
         <>
-          <Row>
-            {products.map((product) => (
-              <Col sm={12} md={6} lg={4} xl={3}>
+          <Row style={{ gap: '24px 0' }}>
+            {products.map((product, i) => (
+              <Col sm={12} md={6} lg={4} xl={3} key={i}>
                 <Product product={product} />
               </Col>
             ))}

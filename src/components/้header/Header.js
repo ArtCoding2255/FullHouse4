@@ -10,16 +10,17 @@ import style from './style.module.css';
 import { BsBag } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
 import SearchBox from '../SearchBox';
-import { Route } from 'react-router-dom';
+import { Route, useHistory } from 'react-router-dom';
 
 const Header = () => {
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
   const logoutHandler = () => {
     dispatch(logout());
+    history.replace('/');
   };
 
   return (
