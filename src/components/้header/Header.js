@@ -73,11 +73,11 @@ const Header = () => {
                     style={{ marginLeft: '1%', marginRight: '0' }}
                   >
                     <LinkContainer to="/profile">
-                      <NavDropdown.Item>Profile</NavDropdown.Item>
+                      <NavDropdown.Item>My profile</NavDropdown.Item>
                     </LinkContainer>
 
                     <LinkContainer to="/orderhistory">
-                      <NavDropdown.Item>Order history</NavDropdown.Item>
+                      <NavDropdown.Item>My order history</NavDropdown.Item>
                     </LinkContainer>
                     <NavDropdown.Item onClick={logoutHandler}>
                       Logout
@@ -112,8 +112,12 @@ const Header = () => {
                   <NavDropdown.Item>Products</NavDropdown.Item>
                 </LinkContainer>
 
-                <LinkContainer to="/admin/orderlist">
-                  <NavDropdown.Item>Orders</NavDropdown.Item>
+                <LinkContainer to="/profile">
+                  <NavDropdown.Item>My profile</NavDropdown.Item>
+                </LinkContainer>
+
+                <LinkContainer to="/orderhistory">
+                  <NavDropdown.Item>My order history</NavDropdown.Item>
                 </LinkContainer>
                 <NavDropdown.Item onClick={logoutHandler}>
                   Logout
