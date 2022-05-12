@@ -39,7 +39,7 @@ const CartScreen = ({ match, location, history }) => {
     history.push('/login?redirect=shipping');
   };
   return (
-    <>
+    <div style={{ marginTop: '7%' }}>
       <Row>
         <Col md={8}>
           <h3>Shopping Cart</h3>
@@ -61,9 +61,14 @@ const CartScreen = ({ match, location, history }) => {
                       ></Image>
                     </Col>
                     <Col md={3}>
-                      <Link to={`/product/${item.product}`}>{item.name}</Link>
+                      <Link
+                        to={`/product/${item.product}`}
+                        style={{ textDecoration: 'none' }}
+                      >
+                        {item.name}
+                      </Link>
                     </Col>
-                    <Col md={2}>${item.price}</Col>
+                    <Col md={2}>{item.price} THB</Col>
                     <Col md={2}>
                       <Form.Control
                         as="select"
@@ -96,7 +101,7 @@ const CartScreen = ({ match, location, history }) => {
             </ListGroup>
           )}
         </Col>
-        <Col md={4}>
+        <Col md={4} style={{ marginTop: '4%' }}>
           <Card>
             <ListGroup variant="flush">
               <ListGroup.Item>
@@ -108,13 +113,14 @@ const CartScreen = ({ match, location, history }) => {
                   {cartItems
                     .reduce((acc, item) => acc + item.qty * item.price, 0)
                     .toFixed(2)}{' '}
-                  BAHT
+                  THB
                 </p>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button
                   disabled={cartItems.length === 0}
                   onClick={checkoutHandler}
+                  style={{ width: '380px' }}
                 >
                   Proceed To Checkout
                 </Button>
@@ -123,7 +129,7 @@ const CartScreen = ({ match, location, history }) => {
           </Card>
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
 

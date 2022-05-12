@@ -25,10 +25,15 @@ const PaymentScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
-      <h1>Payment Method</h1>
+      <h1 style={{ marginTop: '6%', fontSize: '30px' }}>Payment Method</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>
-          <Form.Label as="legend">Select Method</Form.Label>
+          <Form.Label
+            as="legend"
+            style={{ marginBottom: '3%', fontSize: '20px' }}
+          >
+            Select Method
+          </Form.Label>
           <Col>
             <Form.Check
               type="radio"
@@ -38,19 +43,11 @@ const PaymentScreen = ({ history }) => {
               value="Pay By Cash"
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
+              style={{ fontSize: '18px' }}
             ></Form.Check>
-            {/*  <Form.Check
-              type="radio"
-              label="Stripe"
-              id="Stripe"
-              name="paymentMethod"
-              value="Stripe"
-              checked
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            ></Form.Check> */}
           </Col>{' '}
         </Form.Group>
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" style={{ marginTop: '6%' }}>
           Continue
         </Button>
       </Form>

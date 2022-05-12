@@ -45,7 +45,7 @@ const ProfileScreen = ({ location, history }) => {
 
   return (
     <Row>
-      <Col md={3}>
+      <Col md={3} style={{ marginTop: '7%' }}>
         <h2>User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
@@ -90,7 +90,7 @@ const ProfileScreen = ({ location, history }) => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Button>Update</Button>
+          <Button style={{ marginTop: '5%' }}>Update</Button>
         </Form>
       </Col>
       <Col md={9}>

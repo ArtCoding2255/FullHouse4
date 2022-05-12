@@ -31,10 +31,9 @@ const OrderScreen = ({ match }) => {
   }
 
   // Cal price
-
   useEffect(() => {
     dispatch(getOrderDetails(orderId));
-  }, []);
+  }, [dispatch, orderId]);
 
   return loading ? (
     <Loader />
@@ -53,7 +52,12 @@ const OrderScreen = ({ match }) => {
                 {order.user.name}
               </p>
               <p>
-                <a href={`mailto${order.user.email}`}>{order.user.email}</a>
+                <a
+                  href={`mailto${order.user.email}`}
+                  style={{ textDecoration: 'none' }}
+                >
+                  {order.user.email}
+                </a>
               </p>
               <p>
                 <strong>Address: </strong>
@@ -66,7 +70,7 @@ const OrderScreen = ({ match }) => {
                   Delivered on {order.deliveredAt}
                 </Message>
               ) : (
-                <Message variant="danger">Not Delivered</Message>
+                <Message variant="warning">Pending...</Message>
               )}
             </ListGroup.Item>
 
@@ -79,7 +83,7 @@ const OrderScreen = ({ match }) => {
               {order.isPaid ? (
                 <Message variant="success">Paid on {order.paidAt}</Message>
               ) : (
-                <Message variant="danger">Not Paid</Message>
+                <Message variant="warning">Pending...</Message>
               )}
             </ListGroup.Item>
 
@@ -101,11 +105,14 @@ const OrderScreen = ({ match }) => {
                           />
                         </Col>
                         <Col>
-                          <Link to={`/product/${item.product}`}>
+                          <Link
+                            to={`/product/${item.product}`}
+                            style={{ textDecoration: 'none' }}
+                          >
                             {item.name}
                           </Link>
                         </Col>
-                        <Col md={4}>
+                        <Col md={4} style={{ fontSize: '12px' }}>
                           {item.qty} x {item.price} THB = {item.qty} *{' '}
                           {item.price} THB
                         </Col>
@@ -117,34 +124,47 @@ const OrderScreen = ({ match }) => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
-        <Col md={4}>
+        <Col md={4} style={{ marginTop: '1%' }}>
           <Card>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2 style={{ marginTop: '1%', marginLeft: '13%' }}>
+                  Order Summary
+                </h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
+                  <Col style={{ marginLeft: '10%' }}>Items</Col>
                   <Col>{order.itemsPrice} THB</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping</Col>
+                  <Col style={{ marginLeft: '10%' }}>Shipping</Col>
                   <Col>{order.shippingPrice} THB</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Tax</Col>
+                  <Col style={{ marginLeft: '10%' }}>Tax</Col>
                   <Col>{order.taxPrice} THB</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Total</Col>
-                  <Col>{order.totalPrice} THB</Col>
+                  <Col
+                    style={{
+                      marginLeft: '10%',
+                      fontWeight: '1000',
+                      fontSize: '16px',
+                    }}
+                  >
+                    Total
+                  </Col>
+                  <Col style={{ fontWeight: '1000', fontSize: '16px' }}>
+                    {' '}
+                    {order.totalPrice} THB
+                  </Col>
                 </Row>
               </ListGroup.Item>
             </ListGroup>

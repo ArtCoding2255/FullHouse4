@@ -59,7 +59,7 @@ const PlaceOrderScreen = ({ history }) => {
         <Col md={8}>
           <ListGroup variant="flush">
             <ListGroup.Item>
-              <h2>Shipping</h2>
+              <h3>Shipping</h3>
               <p>
                 <strong>Address: </strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city},{' '}
@@ -69,13 +69,13 @@ const PlaceOrderScreen = ({ history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
+              <h3>Payment Method</h3>
               <strong>Method: </strong>
               {cart.paymentMethod}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h3>Order Items</h3>
               {cart.cartItems.length === 0 ? (
                 <Message>Your cart is empty</Message>
               ) : (
@@ -84,21 +84,21 @@ const PlaceOrderScreen = ({ history }) => {
                     <ListGroup.Item key={index}>
                       <Row>
                         <Col md={1}>
-                          <Image
-                            src={item.image}
-                            alt={item.name}
-                            fluid
-                            rounded
-                          />
+                          <Image src={item.image} alt={item.name} fluid />
                         </Col>
                         <Col>
-                          <Link to={`/product/${item.product}`}>
+                          <Link
+                            to={`/product/${item.product}`}
+                            style={{ textDecoration: 'none' }}
+                          >
                             {item.name}
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x {item.price} THB = {item.qty} *{' '}
-                          {item.price} THB
+                          <p style={{ fontSize: '12px' }}>
+                            {item.qty} x {item.price} THB ={' '}
+                            {item.qty * item.price}THB
+                          </p>
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -108,46 +108,49 @@ const PlaceOrderScreen = ({ history }) => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
-        <Col md={4}>
+        <Col md={4} style={{ marginTop: '2%' }}>
           <Card>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h3 style={{ marginTop: '1%', marginLeft: '16%' }}>
+                  Order Summary
+                </h3>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
+                  <Col style={{ marginLeft: '10%' }}>Items</Col>
                   <Col>{cart.itemsPrice} THB</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping</Col>
+                  <Col style={{ marginLeft: '10%' }}>Shipping</Col>
                   <Col>{cart.shippingPrice} THB</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Tax</Col>
+                  <Col style={{ marginLeft: '10%' }}>Tax</Col>
                   <Col>{cart.taxPrice} THB</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Total</Col>
+                  <Col style={{ marginLeft: '10%' }}>Total</Col>
                   <Col>{cart.totalPrice} THB</Col>
                 </Row>
               </ListGroup.Item>
 
-              <ListGroup.Item>
+              {/*     <ListGroup.Item>
                 {error && <Message variant="danger">{error}</Message>}
-              </ListGroup.Item>
+              </ListGroup.Item> */}
               <ListGroup.Item>
                 <Button
                   type="button"
                   className="btn-block"
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
+                  style={{ width: '280px', marginLeft: '12%', marginTop: '3%' }}
                 >
                   Place Order
                 </Button>

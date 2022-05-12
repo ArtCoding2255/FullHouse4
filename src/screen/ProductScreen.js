@@ -30,7 +30,7 @@ const ProductScreen = ({ history, match }) => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
   return (
-    <>
+    <div style={{ marginTop: '7%' }}>
       <Link className="btn btn-dark my-3" to="/">
         Go Back
       </Link>
@@ -52,7 +52,7 @@ const ProductScreen = ({ history, match }) => {
               <ListGroup.Item>
                 <h5>{product.name}</h5>
               </ListGroup.Item>
-              <ListGroup.Item>Price: {product.price}</ListGroup.Item>
+              <ListGroup.Item>Price: {product.price} </ListGroup.Item>
               <ListGroup.Item>
                 <p>{product.description}</p>
               </ListGroup.Item>
@@ -63,11 +63,11 @@ const ProductScreen = ({ history, match }) => {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <Row>
-                    <Col>Price</Col>
+                    <Col style={{ marginLeft: '8%' }}>Price</Col>
                     <Col>
                       <p>
                         <strong>
-                          BAHT <p>{product.price}</p>
+                          <p>{product.price} THB</p>
                         </strong>
                       </p>
                     </Col>
@@ -75,7 +75,7 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Status:</Col>
+                    <Col style={{ marginLeft: '8%' }}>Status:</Col>
                     <Col>
                       {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
                     </Col>
@@ -84,7 +84,7 @@ const ProductScreen = ({ history, match }) => {
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <Row>
-                      <Col>Qty</Col>
+                      <Col style={{ marginLeft: '8%' }}>Qty</Col>
                       <Col>
                         <Form.Control
                           as="select"
@@ -108,6 +108,7 @@ const ProductScreen = ({ history, match }) => {
                     className="btn-block"
                     type="button"
                     disabled={product.countInStock === 0}
+                    style={{ marginLeft: '0', width: '275px' }}
                   >
                     Add To Cart
                   </Button>
@@ -117,7 +118,7 @@ const ProductScreen = ({ history, match }) => {
           </Col>
         </Row>
       )}
-    </>
+    </div>
   );
 };
 

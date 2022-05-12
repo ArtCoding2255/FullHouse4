@@ -1,30 +1,42 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-
+import style from '../style.module.css';
 import { Link } from 'react-router-dom';
 
 export const Product = ({ product }) => {
   return (
-    <Card className="my-3 p-3 rounded">
-      <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image}></Card.Img>
-      </Link>
-
-      <Card.Body>
+    <>
+      <Card className={`my-3 p-3 rounded ${style.img}`}>
         <Link to={`/product/${product._id}`}>
-          <Card.Title as="div">
+          <Card.Img src={product.image} className={`${style.img}`}></Card.Img>
+        </Link>
+      </Card>
+
+      <Card.Body style={{ border: 'none', color: '#5D5D5D' }}>
+        <Link to={`/product/${product._id}`} style={{ textDecoration: 'none' }}>
+          <Card.Title
+            as="div"
+            style={{
+              marginTop: '1%',
+            }}
+          >
             <strong>
-              <p>{product.name}</p>
+              <p
+                style={{
+                  whiteSpace: 'nowrap',
+                  textOverflow: 'ellipsis',
+                  overflow: 'hidden',
+                  fontWeight: 'bolder',
+                  marginTop: '1%',
+                }}
+              >
+                {product.name}
+              </p>
             </strong>
           </Card.Title>
         </Link>
-        <Card.Text as="div">
-          <div className="my-3">
-            {product.rating} from {product.numReviews} reviews
-          </div>
-        </Card.Text>
-        <Card.Text as="p">${product.price}</Card.Text>
+        <Card.Text as="p">{product.price} THB</Card.Text>
       </Card.Body>
-    </Card>
+    </>
   );
 };

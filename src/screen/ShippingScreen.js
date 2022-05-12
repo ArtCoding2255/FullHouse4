@@ -24,7 +24,7 @@ const ShippingScreen = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 />
-      <h1>Shipping</h1>
+      <h1 style={{ marginTop: '5%' }}>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="address">
           <Form.Label>address</Form.Label>
@@ -66,7 +66,7 @@ const ShippingScreen = ({ history }) => {
             onChange={(e) => setCountry(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" style={{ marginTop: '5%' }}>
           Continue
         </Button>
       </Form>
