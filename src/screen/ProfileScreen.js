@@ -45,7 +45,7 @@ const ProfileScreen = ({ location, history }) => {
 
   return (
     <Row>
-      <Col md={3} style={{ marginTop: '7%' }}>
+      <Col md={6} style={{ marginTop: '7%' }}>
         <h2>User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
@@ -92,9 +92,6 @@ const ProfileScreen = ({ location, history }) => {
           </Form.Group>
           <Button style={{ marginTop: '5%' }}>Update</Button>
         </Form>
-      </Col>
-      <Col md={9}>
-        <h2>My Order</h2>
       </Col>
     </Row>
   );

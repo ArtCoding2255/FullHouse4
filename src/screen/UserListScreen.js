@@ -58,7 +58,14 @@ const UserListScreen = ({ history }) => {
                 <td>{user._id}</td>
                 <td>{user.name}</td>
                 <td>
-                  <a href={`mailto: ${user.email}`}>{user.email}</a>
+                  <a
+                    href={`mailto: ${user.email}`}
+                    style={{
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {user.email}
+                  </a>
                 </td>
                 <td>
                   {user.isAdmin ? (
@@ -68,11 +75,6 @@ const UserListScreen = ({ history }) => {
                   )}
                 </td>
                 <td>
-                  <LinkContainer to={`/user/${user._id}/edit`}>
-                    <Button variant="light" className="btn-sm">
-                      <FiEdit />
-                    </Button>
-                  </LinkContainer>
                   <Button
                     variant="danger"
                     className="btn-sm"

@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './bootstrap.min.css';
 import Footer from './components/Footer';
-import Header from './components/้header/Header';
+import HeaderTwo from './components/้header/HeaderTwo';
 import HomeScreen from './screen/HomeScreen';
 import ProductScreen from './screen/ProductScreen';
 import CartScreen from './screen/CartScreen.js';
@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
+        <HeaderTwo />
         <main className="py-3">
           <Container>
             <Route path="/login" component={LoginScreen} />

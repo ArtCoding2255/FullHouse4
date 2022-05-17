@@ -118,7 +118,7 @@ const CartScreen = ({ match, location, history }) => {
                 <Button
                   disabled={cartItems.length === 0}
                   onClick={checkoutHandler}
-                  style={{ width: '380px' }}
+                  style={{ width: '100%' }}
                 >
                   Proceed To Checkout
                 </Button>

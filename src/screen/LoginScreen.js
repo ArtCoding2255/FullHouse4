@@ -6,6 +6,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { login } from '../actions/userActions';
 import FormContainer from '../components/FormContainer';
+import style from '../style.module.css';
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState('');
@@ -60,7 +61,15 @@ const LoginScreen = ({ location, history }) => {
       <Row className="py-3">
         <Col>
           New Customer?{' '}
-          <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
+          <Link
+            className={`${style.loginHover}`}
+            to={redirect ? `/register?redirect=${redirect}` : '/register'}
+            style={{
+              textDecoration: 'none',
+              fontWeight: '600',
+              cursor: 'pointer',
+            }}
+          >
             Register
           </Link>
         </Col>

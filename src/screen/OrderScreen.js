@@ -70,7 +70,7 @@ const OrderScreen = ({ match }) => {
                   Delivered on {order.deliveredAt}
                 </Message>
               ) : (
-                <Message variant="warning">Pending...</Message>
+                <Message variant="warning">Pending</Message>
               )}
             </ListGroup.Item>
 
@@ -83,7 +83,7 @@ const OrderScreen = ({ match }) => {
               {order.isPaid ? (
                 <Message variant="success">Paid on {order.paidAt}</Message>
               ) : (
-                <Message variant="warning">Pending...</Message>
+                <Message variant="warning">Pending</Message>
               )}
             </ListGroup.Item>
 

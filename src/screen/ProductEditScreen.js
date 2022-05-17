@@ -163,7 +163,11 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type="submit" variant="primary">
+            <Button
+              type="submit"
+              variant="primary"
+              style={{ marginTop: '30px' }}
+            >
               Update
             </Button>
           </Form>

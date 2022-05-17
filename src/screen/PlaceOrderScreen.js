@@ -140,17 +140,13 @@ const PlaceOrderScreen = ({ history }) => {
                   <Col>{cart.totalPrice} THB</Col>
                 </Row>
               </ListGroup.Item>
-
-              {/*     <ListGroup.Item>
-                {error && <Message variant="danger">{error}</Message>}
-              </ListGroup.Item> */}
               <ListGroup.Item>
                 <Button
                   type="button"
                   className="btn-block"
                   disabled={cart.cartItems === 0}
                   onClick={placeOrderHandler}
-                  style={{ width: '280px', marginLeft: '12%', marginTop: '3%' }}
+                  style={{ width: '100%' }}
                 >
                   Place Order
                 </Button>

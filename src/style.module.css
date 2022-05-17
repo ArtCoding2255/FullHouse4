@@ -6,3 +6,10 @@
 .img {
   margin-bottom: '0';
 }
+
+.loginHover {
+  color: 'grey';
+}
+.loginHover:hover {
+  color: 'black';
+}

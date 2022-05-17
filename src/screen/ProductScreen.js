@@ -31,9 +31,6 @@ const ProductScreen = ({ history, match }) => {
   };
   return (
     <div style={{ marginTop: '7%' }}>
-      <Link className="btn btn-dark my-3" to="/">
-        Go Back
-      </Link>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -108,7 +105,7 @@ const ProductScreen = ({ history, match }) => {
                     className="btn-block"
                     type="button"
                     disabled={product.countInStock === 0}
-                    style={{ marginLeft: '0', width: '275px' }}
+                    style={{ marginLeft: '0', width: '100%' }}
                   >
                     Add To Cart
                   </Button>

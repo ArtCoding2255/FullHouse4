@@ -83,16 +83,16 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" style={{ marginTop: '30px' }}>
           Register
         </Button>
       </Form>
       <Row className="py-3">
         <Col>
-          Have an Account?
+          Have an Account?{' '}
           <Link
             to={redirect ? `/login?redirect=${redirect}` : '/login'}
-            style={{ textDecoration: 'none' }}
+            style={{ textDecoration: 'none', fontWeight: '600' }}
           >
             Login
           </Link>
