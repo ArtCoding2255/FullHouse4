@@ -1,15 +1,22 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import style from '../style.module.css';
 import { Link } from 'react-router-dom';
+import { BsBag } from 'react-icons/bs';
 
 export const Product = ({ product }) => {
   return (
     <>
       <Card className={`rounded ${style.img}`}>
-        <Link to={`/product/${product._id}`}>
-          <Card.Img src={product.image} className={`${style.img}`}></Card.Img>
-        </Link>
+        <div className={`${style.overlay}`}>
+          <Link to="/cart">
+            <BsBag
+              className={`${style.overlayButton}`}
+              style={{ fontSize: '35px' }}
+            />
+          </Link>
+        </div>
+        <Card.Img src={product.image} />
       </Card>
 
       <Card.Body style={{ border: 'none', color: '#5D5D5D', padding: '0' }}>
