@@ -147,7 +147,7 @@ const HeaderTwo = () => {
                   </LinkContainer>
 
                   <LinkContainer to="/orderhistory">
-                    <NavDropdown.Item>My order history</NavDropdown.Item>
+                    <NavDropdown.Item>Order history</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout

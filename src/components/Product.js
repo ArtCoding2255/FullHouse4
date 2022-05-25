@@ -9,7 +9,7 @@ export const Product = ({ product }) => {
     <>
       <Card className={`rounded ${style.img}`}>
         <div className={`${style.overlay}`}>
-          <Link to="/cart">
+          <Link to={`/cart/${product._id}`}>
             <BsBag
               className={`${style.overlayButton}`}
               style={{ fontSize: '35px' }}
